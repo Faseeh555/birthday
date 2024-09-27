@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="background-music" src="birthday-song.mp3" loop></audio>
+
+    <div class="birthday-container">
+        <h1 class="birthday-heading">🎉 Happy Birthday! 🎉</h1>
+        <p class="birthday-subtext">Wishing you a day full of love and joy!</p>
+
+        <div class="balloons">
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+        </div>
+
+        <div class="candles">
+            <div class="candle"></div>
+            <div class="candle"></div>
+            <div class="candle"></div>
+        </div>
+
+        <button class="surprise-btn" onclick="goToSurprise()">Click for a Surprise!</button>
+    </div>
+
+    <script>
+        function goToSurprise() {
+            window.location.href = "letter.html";
+        }
+
+        // Autoplay music on page load
+        window.onload = function() {
+            const music = document.getElementById('background-music');
+            music.play().catch(function(error) {
+                console.log("Music autoplay was blocked, please click the play button to start.");
+            });
+        };
+    </script>
+</body>
+</html>
